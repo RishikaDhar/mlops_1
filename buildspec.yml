@@ -11,10 +11,10 @@ phases:
   build:
     commands:
       - echo Build API image
-      - docker build --no cache -f src/Dockerfile.api -t $API_REPO .
+      - docker build --no-cache -f src/Dockerfile.api -t $API_REPO .
 
       - echo Build UI image
-      - docker build --no cache -f src/Dockerfile.app_streamlit -t $UI_REPO .
+      - docker build --no-cache -f src/Dockerfile.app_streamlit -t $UI_REPO .
 
       - echo Tag images
       - docker tag $API_REPO:latest $ACCOUNT_ID.dkr.ecr.$AWS_REGION.amazonaws.com/$API_REPO:latest
